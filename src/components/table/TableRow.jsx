@@ -1,10 +1,24 @@
-import Toast from "../toast/Toast";
+import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
+import { FaRegHeart } from "react-icons/fa6";
+import { FaHeart } from "react-icons/fa6";
 
-const TableRow = ({data,handleFavorite}) => {
 
+const TableRow = ({ data, handleFavorite,favorite }) => {
+  const notify = () => toast.success("🚀 Item added to the Favourite");
+  const [bid, setBid] = useState(false);
+
+  useEffect(() => {
+    if (favorite.includes(data)) {
+      setBid(true);
+    } else {
+      setBid(false);
+    }
+  }, [favorite,data]);
+  
 
   return (
-    <tr className="border-b border-[#DCE5F3]">
+    <tr className="border-b border-[#DCE5F3] ">
       <td>
         <div className="flex items-center gap-3">
           <img
@@ -12,14 +26,34 @@ const TableRow = ({data,handleFavorite}) => {
             src={data.image}
             alt=""
           />
-          <p className="font-sora font-normal text-[#0E2954] text-base">{data.title}</p>
+          <p className="font-sora font-normal text-[#0E2954] text-base">
+            {data.title}
+          </p>
         </div>
       </td>
-      <td className="font-sora font-normal text-black text-lg text-center">{data.currentBid}</td>
-      <td className="font-sora font-normal text-black text-lg text-center">{data.time}</td>
-      <td className="text-center"><Toast data={data} handleFavorite={handleFavorite}></Toast></td>
+      <td className="font-sora font-normal text-[#0E2954] text-lg text-center">
+        ${data.currentBidPrice}
+      </td>
+      <td className="font-sora font-normal text-[#0E2954] text-lg text-center">
+        {data.timeLeft}
+      </td>
+      <td className="text-center">
+        <button
+          disabled={bid}
+          onClick={() => {
+            notify();
+            handleFavorite(data);
+          }}
+          className="text-center disabled:cursor-not-allowed cursor-pointer"
+        >
+          {favorite.includes(data) ? (
+            <FaHeart className="text-[#fb2c36]" size={25} />
+          ): (
+            <FaRegHeart size={25} />
+          )}
+        </button>
+      </td>
     </tr>
   );
 };
-
 export default TableRow;

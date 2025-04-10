@@ -18,7 +18,7 @@ const TableRow = ({ data, handleFavorite,favorite }) => {
   
 
   return (
-    <tr className="border-b border-[#DCE5F3] ">
+    <tr className="border-b border-[#DCE5F3]">
       <td>
         <div className="flex items-center gap-3">
           <img

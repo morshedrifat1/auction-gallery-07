@@ -49,7 +49,7 @@ function App() {
         </div>
         <div className="table-content grid  lg:grid-cols-3 gap-5 sm:gap-6">
         <div className="table lg:col-span-2">
-          <Suspense fallback={<p>loading</p>}>
+          <Suspense fallback={<span class="loading loading-ring loading-xl"></span>}>
             <Table favorite={favorite} handleFavorite={handleFavorite} auctionData={auctionData}></Table>
           </Suspense>
         </div>

@@ -7,7 +7,8 @@ const Navbar = ({auctions}) => {
     return (
         <div className='flex justify-between items-center py-5 max-w-[1536px] px-5 md:px-10'>
             <div className="logo">
-                <img className='w-[200px]' src="img/logo.png" alt="" />
+                <a href="https://a7-auction-gallery1.surge.sh/"><img className='w-[200px]' src="img/logo.png" alt="" /></a>
+
             </div>
             <div className="nav-item hidden lg:inline">
                 <ul className='flex items-center gap-10'>

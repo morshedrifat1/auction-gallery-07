@@ -6,7 +6,7 @@ import Navbar from "./components/navbar/Navbar";
 import Table from "./components/table/Table";
 import Footer from "./components/Footer";
 
-// jsondata load 
+// jsondata fake load 
 const auctionData = fetch("auctionData.json").then((res) => res.json());
 function App() {
 

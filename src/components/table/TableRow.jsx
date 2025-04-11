@@ -23,7 +23,6 @@ const TableRow = ({ data, handleFavorite,favorite }) => {
           <img
             className="w-15 h-15 object-cover rounded-lg"
             src={data.image}
-            alt=""
           />
           <p className="font-sora font-normal text-[#0E2954] text-base">
             {data.title}

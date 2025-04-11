@@ -10,7 +10,6 @@ import Footer from "./components/Footer";
 const auctionData = fetch("auctionData.json").then((res) => res.json());
 function App() {
 
-
   // Favorite Items add and remove 
   const [favorite,setFavorite]  = useState([]);
 

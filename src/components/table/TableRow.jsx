@@ -1,7 +1,6 @@
-import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
-import { FaRegHeart } from "react-icons/fa6";
-import { FaHeart } from "react-icons/fa6";
+import { FaHeart, FaRegHeart } from "react-icons/fa6";
+import { toast } from "react-toastify";
 
 
 const TableRow = ({ data, handleFavorite,favorite }) => {
